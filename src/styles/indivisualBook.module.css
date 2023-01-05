@@ -1,0 +1,29 @@
+.unorderedList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  padding: 7px 5px 5px 0;
+  box-sizing: border-box;
+  color: #525e75;
+}
+
+.bookTitle {
+  width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bookImg {
+  width: 250px;
+  height: 350px;
+}
+
+.bookImg:hover {
+  cursor: pointer;
+}

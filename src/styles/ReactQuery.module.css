@@ -1,0 +1,18 @@
+.pageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.resultContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  position: relative;
+  margin-top: 200px;
+}
+
+.heading {
+  color: #525e75;
+}
