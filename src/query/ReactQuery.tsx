@@ -12,18 +12,20 @@ const fetchBooks = async (URL : string) => {
 }
 
 export const ReactQuery = () => {
+  // console.log(import.meta.env);
+
   const [page,setPage] = useState<number>(1);
   const [keyword , setKeyword] = useState<string>("本");
   const [searchWord, setSearchWord] = useState<string>("");
-const appId = "1054692824595627335";
+  const appId = "1054692824595627335";
   let URL = `https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&keyword=${keyword}&booksGenreId=000&page=${page}&hits=24&applicationId=${appId}`
   const { isLoading, error, data } = useQuery(['Item', URL], () => fetchBooks(URL), { keepPreviousData : true });
   let currentPage : number = 1;
   if(data) {
     currentPage = data.pageCount;  
-    console.log(import.meta.env.VITE_API_KEY);
-      
   }
+
+
   
   const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
