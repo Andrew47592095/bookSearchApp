@@ -23,7 +23,7 @@ export const Header = () => {
 
   return (
     <div className={styles.header}>
-      <h1 className={styles.title}>React & TypeScript Book Search API</h1>
+      <h1 className={styles.title}>Book Search App</h1>
       <div className={styles.btnContainer}>
         <Button onClick={handleRegister} className={styles.btnLink}>Register</Button>
         <Button onClick={handleLogin} className={styles.btnLink}>Login</Button>
