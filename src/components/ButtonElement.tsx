@@ -10,8 +10,16 @@ type Props = {
 }
 
 export const ButtonElement : React.FC<Props> = ({ page, setPage, currentPage }) => {
+  const returnToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   const handleChange = (e : React.ChangeEvent<unknown>, value : number) => {
     setPage(value);
+    returnToTop();
   }
 
   return (

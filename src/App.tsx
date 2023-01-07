@@ -8,8 +8,6 @@ import { Header } from './components/Header';
 const queryClient = new QueryClient()
 
 function App() {
-  console.log(import.meta.env.VITE_API_KEY);
-
   return (
     <QueryClientProvider client={queryClient} >
       <div className='App'>

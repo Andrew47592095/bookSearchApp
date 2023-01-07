@@ -4,7 +4,7 @@ import styles from '../styles/ReactQuery.module.css';
 import { ButtonElement } from '../components/ButtonElement';
 import { SearchForm } from '../components/SearchForm';
 import { SearchResultPage } from '../components/SearchResultPage';
-const appId = "1054692824595627335";
+
 
 const fetchBooks = async (URL : string) => {
   const res = await fetch(URL);
@@ -12,25 +12,24 @@ const fetchBooks = async (URL : string) => {
 }
 
 export const ReactQuery = () => {
-  // console.log(import.meta.env);
-
+  const baseUrl = import.meta.env.VITE_URL;
   const [page,setPage] = useState<number>(1);
   const [keyword , setKeyword] = useState<string>("本");
   const [searchWord, setSearchWord] = useState<string>("");
-  const appId = "1054692824595627335";
-  let URL = `https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&keyword=${keyword}&booksGenreId=000&page=${page}&hits=24&applicationId=${appId}`
+  let URL = `${baseUrl}&keyword=${keyword}&page=${page}`
   const { isLoading, error, data } = useQuery(['Item', URL], () => fetchBooks(URL), { keepPreviousData : true });
   let currentPage : number = 1;
   if(data) {
-    currentPage = data.pageCount;  
+    currentPage = data.pageCount;
   }
-
-
   
   const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setKeyword(searchWord);
-    setSearchWord("");
+    if(searchWord !== "") {
+      setKeyword(searchWord);
+      setPage(1);
+      setSearchWord("");
+    }
   }
 
   return (
