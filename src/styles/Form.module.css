@@ -63,3 +63,20 @@
   margin-top: 20px;
   font-size: 1.15rem;
 }
+
+@media screen and (max-width: 480px) {
+  .form {
+    width: 90%;
+    height: 60%;
+    top: 38%;
+  }
+
+  .formContainer {
+    margin-top: 5px;
+  }
+
+  .textField {
+    width: 80%;
+    height: 40px;
+  }
+}

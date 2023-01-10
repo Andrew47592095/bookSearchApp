@@ -3,10 +3,11 @@ import { Item } from '../type/BookType';
 import { BookDetail } from './BookDetail';
 import { Modal } from '@mui/material';
 import  styles from '../styles/indivisualBook.module.css';
+import { useWidth } from '../hooks/useWidth';
 
 export const IndivisualBook = ({ book } : { book : Item }) => {
   const [open, setOpen] = useState(false);
-  const [imageUrls, setImageUrls] = useState([]);
+  const width = useWidth();
   const fixedImgUrl = book.Item.largeImageUrl.replace("_ex=200x200", "");
 
   const handleOpen = () => {
@@ -26,7 +27,9 @@ export const IndivisualBook = ({ book } : { book : Item }) => {
             alt={book.Item.title} 
             className={styles.bookImg}
           />
-          <h3 className={styles.bookTitle}>{book.Item.title}</h3>
+          {width > 480 ? 
+            <h3 className={styles.bookTitle}>{book.Item.title}</h3> : ""
+          }
         </div>
         <Modal
           open={open}

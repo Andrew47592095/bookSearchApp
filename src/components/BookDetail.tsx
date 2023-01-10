@@ -7,7 +7,7 @@ import { Item } from '../type/BookType';
 import Button from '@mui/material/Button';
 
 export const BookDetail = ({ handleClose, book, fixedImgUrl } : { handleClose : () => void, book : Item, fixedImgUrl : string}) => {
-  const [favorite, setFavorite] = useState(false);  
+  const [favorite, setFavorite] = useState(false); 
 
   const handleFav = () => {
     if(favorite === true) {
@@ -43,7 +43,7 @@ export const BookDetail = ({ handleClose, book, fixedImgUrl } : { handleClose : 
           <img src={fixedImgUrl} alt={book.Item.title} className={styles.bookImg}/>
         </div>
         <div className={`${styles.bookDescription} ${styles.wrapper}`}>
-          <h1>{book.Item.title}</h1>
+          <h1 className={styles.bookTitle}>{book.Item.title}</h1>
           <br />
           <h3>著者: {book.Item.author}</h3>
           <h3>価格: ¥{book.Item.itemPrice}</h3>

@@ -5,7 +5,6 @@ import { ButtonElement } from '../components/ButtonElement';
 import { SearchForm } from '../components/SearchForm';
 import { SearchResultPage } from '../components/SearchResultPage';
 
-
 const fetchBooks = async (URL : string) => {
   const res = await fetch(URL);
   return res.json();
@@ -16,7 +15,7 @@ export const ReactQuery = () => {
   const [page,setPage] = useState<number>(1);
   const [keyword , setKeyword] = useState<string>("本");
   const [searchWord, setSearchWord] = useState<string>("");
-  let URL = `${baseUrl}&keyword=${keyword}&page=${page}`
+  let URL = `${baseUrl}&keyword=${keyword}&page=${page}`;
   const { isLoading, error, data } = useQuery(['Item', URL], () => fetchBooks(URL), { keepPreviousData : true });
   let currentPage : number = 1;
   if(data) {

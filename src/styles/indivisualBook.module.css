@@ -27,3 +27,10 @@
 .bookImg:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+  .bookImg {
+    width: 80%;
+    height: 86%;
+  }
+}

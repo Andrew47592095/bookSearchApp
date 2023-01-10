@@ -16,3 +16,17 @@
 .heading {
   color: #525e75;
 }
+
+@media screen and (max-width: 959px) {
+  .resultContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .resultContainer {
+    grid-template-columns: 1fr;
+    margin-top: 140px;
+  }
+}

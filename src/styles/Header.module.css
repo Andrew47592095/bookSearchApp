@@ -56,3 +56,40 @@
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
+
+.responsiveMenu {
+  background-color: #eee;
+  position: absolute;
+  transition: all .5s ease;
+  z-index: 10000;
+  width: 100%;
+  height: 60%;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menuItem {
+  font-size: 1.3rem;
+  margin-top: 12px;
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+    position: relative;
+    left: 0;
+    transform: translateX(0);
+  }
+  .header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+  }
+}

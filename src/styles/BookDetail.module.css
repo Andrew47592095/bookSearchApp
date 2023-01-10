@@ -63,3 +63,29 @@
   justify-content: space-between;
   cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+  .bookDetail {
+    width: 90%;
+    height: 75%;
+  }
+
+  .detailContainer {
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .bookImg {
+    width: 50%;
+    height: 50%;
+  }
+
+  .bookTitle {
+    font-size: medium;
+  }
+}
