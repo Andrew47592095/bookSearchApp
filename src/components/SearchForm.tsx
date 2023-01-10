@@ -40,7 +40,7 @@ export const SearchForm : React.FC<Props> = ({ searchWord, setSearchWord, handle
           type="text"
           sx={{
             width : 300,
-            height : "27px"
+            height : "27px",
           }}
         />
       }

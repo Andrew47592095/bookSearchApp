@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styles from "../styles/Header.module.css";
-import { useWidth } from '../hooks/useWidth';
 import { Menu } from './Menu';
 
 export const Header = () => {

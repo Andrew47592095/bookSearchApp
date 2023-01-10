@@ -36,3 +36,9 @@
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
 }
+
+@media screen and (max-width: 480px) {
+  .searchForm {
+    padding-left: 12px;
+  }
+}

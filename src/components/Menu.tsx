@@ -36,7 +36,11 @@ export const Menu = (
     </div> : 
     <div>
       <MenuRoundedIcon
-      onClick={() => {setMenu(true)}}
+        fontSize='large'
+        onClick={() => {setMenu(true)}}
+        sx={{
+          paddingRight : "15px"
+        }}
       />
       <Modal
         open={menu}

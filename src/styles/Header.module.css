@@ -20,8 +20,6 @@
 }
 
 .btnContainer {
-  position: absolute;
-  right: 100px;
   display: flex;
   flex-direction: row;
 }
@@ -48,13 +46,6 @@
 .title {
   font-weight: bold;
   font-size: 2rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
 }
 
 .responsiveMenu {
@@ -81,14 +72,24 @@
 
 @media screen and (max-width: 480px) {
   .title {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     position: relative;
     left: 0;
     transform: translateX(0);
+    padding-left: 15px;
   }
   .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 40px;
   }
