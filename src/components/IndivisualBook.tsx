@@ -1,14 +1,21 @@
+// import package
 import React, { useState } from 'react'
-import { Item } from '../type/BookType';
-import { BookDetail } from './BookDetail';
 import { Modal } from '@mui/material';
+// import local
+import { Book } from '../type/BookType';
+import { BookDetail } from './BookDetail';
 import  styles from '../styles/indivisualBook.module.css';
 import { useWidth } from '../hooks/useWidth';
 
-export const IndivisualBook = ({ book } : { book : Item }) => {
+type Props = {
+  book: Book
+}
+
+export const IndivisualBook = (props: Props) => {
   const [open, setOpen] = useState(false);
+  const { book } = props;
   const width = useWidth();
-  const fixedImgUrl = book.Item.largeImageUrl.replace("_ex=200x200", "");
+  const fixedImgUrl = book.largeImageUrl.replace("_ex=200x200", "");
 
   const handleOpen = () => {
     setOpen(true);
@@ -24,11 +31,11 @@ export const IndivisualBook = ({ book } : { book : Item }) => {
         <div onClick={handleOpen}>
           <img 
             src={fixedImgUrl}
-            alt={book.Item.title} 
+            alt={book.title} 
             className={styles.bookImg}
           />
           {width > 480 ? 
-            <h3 className={styles.bookTitle}>{book.Item.title}</h3> : ""
+            <h3 className={styles.bookTitle}>{book.title}</h3> : ""
           }
         </div>
         <Modal

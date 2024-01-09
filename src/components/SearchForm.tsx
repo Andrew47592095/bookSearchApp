@@ -1,8 +1,10 @@
+// import pacakge
 import React from 'react'
-import styles from "../styles/Search.module.css";
 import { Input, Button } from '@mui/material';
-import { useWidth } from '../hooks/useWidth';
 import SearchIcon from '@mui/icons-material/Search';
+// import local
+import styles from "../styles/Search.module.css";
+import { useWidth } from '../hooks/useWidth';
 
 type Props = {
   searchWord : string,
@@ -10,8 +12,9 @@ type Props = {
   handleSubmit : (e : React.FormEvent<HTMLFormElement>) => void
 }
 
-export const SearchForm : React.FC<Props> = ({ searchWord, setSearchWord, handleSubmit }) => {
+export const SearchForm = (props: Props) => {
   const width = useWidth();
+  const { searchWord, setSearchWord, handleSubmit } = props;
   
   return (
     <form 

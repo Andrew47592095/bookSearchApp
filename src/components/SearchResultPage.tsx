@@ -10,7 +10,8 @@ type Props = {
   data : Data,
 }
 
-export const SearchResultPage : React.FC<Props> = ({ isLoading, error, data }) => {
+export const SearchResultPage = (props: Props) => {
+  const { isLoading, error, data } = props;
   return (
     <div className={styles.resultContainer}>
       {
@@ -20,7 +21,7 @@ export const SearchResultPage : React.FC<Props> = ({ isLoading, error, data }) =
         data.Items.map((book : Item) => (
           <div key={book.Item.isbn + book.Item.title}>
             <IndivisualBook
-              book={book}
+              book={book.Item}
             />
           </div>
         )) : ""

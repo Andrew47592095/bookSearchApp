@@ -1,8 +1,16 @@
+// import package
 import React from 'react';
 import { Modal,Box } from '@mui/material'
+// import local
 import forms from "../styles/Form.module.css"
 
-export const RegisterForm = ({ register, handleClose } : { register : boolean, handleClose : () => void }) => {
+type Props = {
+  register : boolean, 
+  handleClose : () => void
+}
+
+export const RegisterForm = (props: Props) => {
+  const { register, handleClose } = props;
   return (
     <>
       <Modal

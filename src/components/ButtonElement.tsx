@@ -1,7 +1,10 @@
+// import package
 import React from 'react'
-import styles from '../styles/Button.module.css';
 import Pagination from '@mui/material/Pagination';
 import Typography from '@mui/material/Typography';
+// import local
+import styles from '../styles/Button.module.css';
+
 
 type Props = {
   page : number,
@@ -9,7 +12,8 @@ type Props = {
   setPage : (count : number) => void
 }
 
-export const ButtonElement : React.FC<Props> = ({ page, setPage, currentPage }) => {
+export const ButtonElement = ( props: Props) => {
+  const { page, currentPage, setPage } = props
   const returnToTop = () => {
     window.scrollTo({
       top: 0,

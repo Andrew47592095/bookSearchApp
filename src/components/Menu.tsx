@@ -1,19 +1,27 @@
+// import package
 import React, { useState } from 'react'
 import { Modal } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import Button from '@mui/material/Button';
-import { useWidth } from '../hooks/useWidth';
-import styles from "../styles/Header.module.css";
 import CloseIcon from '@mui/icons-material/Close';
+import Button from '@mui/material/Button';
+// import local
+import { useWidth } from '../hooks/useWidth';
 import { Loginform } from './LoginForm';
 import { RegisterForm } from './RegisterForm';
+import styles from "../styles/Header.module.css";
 
-export const Menu = (
-  { handleRegister, handleLogin, login, handleClose, register} :
-  { handleRegister : () => void, handleLogin : () => void, handleClose : () => void, login : boolean, register : boolean}
-  ) => {
+type Props = {
+  handleRegister : () => void, 
+  handleLogin : () => void, 
+  handleClose : () => void, 
+  login : boolean, 
+  register : boolean
+}
+
+export const Menu = ( props: Props) => {
   const width = useWidth();
   const [menu, setMenu] = useState(false);
+  const { handleRegister, handleLogin, handleClose, login, register } = props;
 
   const handleCloseMenu = () => {
     setMenu(false);
