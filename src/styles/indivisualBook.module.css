@@ -10,6 +10,7 @@
   padding: 7px 5px 5px 0;
   box-sizing: border-box;
   color: #525e75;
+  cursor: pointer;
 }
 
 .bookTitle {
@@ -22,6 +23,10 @@
 .bookImg {
   width: 250px;
   height: 350px;
+}
+
+.bookImg:hover {
+  opacity: 0.8;
 }
 
 .bookImg:hover {
