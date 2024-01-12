@@ -23,6 +23,7 @@ export const ButtonElement = ( props: Props) => {
 
   const handleChange = (e : React.ChangeEvent<unknown>, value : number) => {
     setPage(value);
+    
     returnToTop();
   }
 
